@@ -17,8 +17,9 @@ public class dz
             try 
             {
                 System.out.print("Введите желаемое дробное число через запятую: ");
-                Float inp = work.nextFloat();
-                System.out.println("Вы ввели цифру " + inp + "!\nюху.\n");
+                String line = work.nextLine();
+                Float input = Float.parseFloat(line);
+                System.out.println("Вы ввели цифру " + input + "!\nюху.");
                 break;
             } 
             catch (Exception e) 
@@ -27,8 +28,13 @@ public class dz
                 work.next();
             }
         }
+        System.out.println("\n2.");
         errorwork_1(args);
+        System.out.println("\n3.");
         errorwork_2(args);
+        System.out.println("\n4. Теперь, введите своё любимое слово:");
+        String line = work.nextLine();
+        errorwork_3(line);
         work.close();
     }
 
@@ -107,5 +113,19 @@ public class dz
         public static void printSum(Integer a, Integer b) 
         {
             System.out.println(a + b);
+        }
+        
+        // 4. Разработайте программу, которая выбросит Еxception, когда пользователь вводит пустую строку. 
+        // Пользователю должно показаться сообщение, что пустые строки вводить нельзя.
+        public static void errorwork_3(String line) throws RuntimeException
+        {
+            if(line.isEmpty()) 
+            {
+                throw new RuntimeException("Пустые строки вводить нельзя. :(", null);
+            }
+            else 
+            {
+                System.out.println(line +  "! Мне всегда это так нравилось!!! ^_^");
+            }
         }
 }
