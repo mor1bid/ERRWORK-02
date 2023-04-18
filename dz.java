@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class dz 
@@ -10,14 +11,14 @@ public class dz
     public static void main(String[] args) 
     {
         Scanner work = new Scanner(System.in);
-        System.out.print("Здравствуйте! ");
+        System.out.print("1. Здравствуйте! ");
         while(true) 
         {
             try 
             {
                 System.out.print("Введите желаемое дробное число через запятую: ");
                 Float inp = work.nextFloat();
-                System.out.println("Вы ввели цифру " + inp + "!\nюху.");
+                System.out.println("Вы ввели цифру " + inp + "!\nюху.\n");
                 break;
             } 
             catch (Exception e) 
@@ -82,8 +83,10 @@ public class dz
             {
                 System.out.println(a / b);
                 printSum(23, 234);
-                int[] abc = { 1, 2 };
-                abc[2] = 9;
+                Integer[] abc = { 1, 2 };
+                abc[1] = 9;
+                System.out.println(Arrays.asList(abc));
+                abc[2] = 1337;
             } 
             catch (Exception err) 
             {
